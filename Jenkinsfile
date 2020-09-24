@@ -8,7 +8,7 @@ pipeline {
         }
         stage('Test') { 
             steps {
-                println "Test" 
+                sh "echo $PATH" 
             }
         }
         stage('Deploy') { 
