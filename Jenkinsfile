@@ -1,6 +1,9 @@
 pipeline {
     agent {
-        label '109'
+        node {
+            label '109'
+           customWorkspace "${env.JOB_NAME}/${env.BUILD_NUMBER}"
+        }
     }
     stages {
         stage('Build') { 
@@ -10,7 +13,7 @@ pipeline {
         }
         stage('Test') { 
             steps {
-                sh "echo ${JAVA_HOME}" 
+                sh "echo $PATH" 
             }
         }
         stage('Deploy') { 
