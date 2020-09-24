@@ -1,21 +1,23 @@
 pipeline {
     agent {
-       label '109'
+       node {
+           label '109'
+           customWorkspace "${env.JOB_NAME}/${evn.BUILD_NUMBER}"
     } 
     stages {
         stage('Build') { 
             steps {
-                println "Build" 
+                sh "pwd"
             }
         }
         stage('Test') { 
             steps {
-                sh "echo $PATH" 
+                sh "echo ${JAVA_HOME}" 
             }
         }
         stage('Deploy') { 
             steps {
-                println "Deploy" 
+                println "OVER" 
             }
         }
     }
