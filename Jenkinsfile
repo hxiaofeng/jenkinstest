@@ -3,6 +3,7 @@ pipeline {
        node {
            label '109'
            customWorkspace "${env.JOB_NAME}/${evn.BUILD_NUMBER}"
+       }
     } 
     stages {
         stage('Build') { 
