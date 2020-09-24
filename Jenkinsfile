@@ -1,9 +1,5 @@
 pipeline {
-    agent {
-       node {
-           label '109'
-       }
-    } 
+    agent any
     stages {
         stage('Build') { 
             steps {
@@ -12,7 +8,7 @@ pipeline {
         }
         stage('Test') { 
             steps {
-                sh "echo $PATH" 
+                sh "echo ${JAVA_HOME}" 
             }
         }
         stage('Deploy') { 
