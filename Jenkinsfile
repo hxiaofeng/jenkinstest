@@ -13,7 +13,7 @@ pipeline {
         }
         stage('Test') { 
             steps {
-                sh "echo ${JAVA_HOME}" 
+                sh "echo $PATH" 
             }
         }
         stage('Deploy') { 
